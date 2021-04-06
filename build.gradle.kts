@@ -1,6 +1,7 @@
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
+val junit_version: String by project
 
 plugins {
     application
@@ -32,5 +33,10 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
 
+    testImplementation("org.hamcrest:hamcrest:2.2")
+
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junit_version")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junit_version")
     testImplementation("io.ktor:ktor-server-tests:$ktor_version")
+    testImplementation("io.ktor:ktor-server-test-host:$ktor_version")
 }

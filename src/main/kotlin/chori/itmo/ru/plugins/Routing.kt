@@ -32,6 +32,7 @@ suspend fun PipelineContext<Unit, ApplicationCall>.authenticatedUser(client: Htt
     } catch (e: ResponseException) {
         // This may fail if token is expired -> don't need to worry about forgetting user manually
         // Downside: it makes HTTP requests too often
+        // BIG Downside: need too much effort to test it 🙁
         // Conclusion: it should fit to development needs, but not production
 
         call.sessions.clear<ClientSession>()

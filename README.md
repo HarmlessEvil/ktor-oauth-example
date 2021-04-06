@@ -17,3 +17,9 @@
   [Read more](https://ktor.io/docs/transformers.html#SessionTransportTransformerEncrypt)
 * Auth tokens just getting forgotten on logout, not revoked. 
   [[1]](https://community.ory.sh/t/should-i-revoke-the-access-token-on-logout-from-client/2120)
+
+## Improvements
+
+* Move user fetching to some kind of abstraction like repository. 
+  This way I'd be able to mock the repository to achieve better
+  test coverage.
